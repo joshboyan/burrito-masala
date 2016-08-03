@@ -9,6 +9,7 @@ $(document).ready(function() {
       display: 'block'
     });
 });
+
 //Toggle hamburger menu
 $('#toggle').click(function() {
     $('#submenu').toggleClass('submenu show');
