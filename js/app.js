@@ -277,7 +277,7 @@ $(window).scroll(function() {
         });
         $('nav img').css({
             transform: 'scale(.5,.5)',
-            margin: '-30px 0 0 -20px',
+            margin: '-40px 0 0 -20px',
             transition: 'all .2s ease-in-out 0s'
         });
         $('#persistantArrow').css({
@@ -296,8 +296,8 @@ $(window).scroll(function() {
             margin: '0'
         });
         $('nav img').css({
-            transform: 'scale(1,1)',
-            margin: '0',
+            
+            margin: '-40px 0 0 -20px',
             transition: 'all .2s ease-in-out 0s'
         });
         $('#persistantArrow').css({

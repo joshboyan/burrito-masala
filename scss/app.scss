@@ -49,13 +49,14 @@ $header: 'Ovo',
 serif;
 $copy: 'Muli',
 sans-serif;
-$color1: #F1F5F3;
-$color2: #65A3A0;
-$color3: #C01A16;
-$color4: #D71980;
-$color5: #EFB90B;
-$light: #ffffff;
-$dark: #000000;
+$color1: rgba(241, 245, 243, 1);
+$color2: rgba(101, 163, 160, .4);
+$color4: rgba(192, 26, 22, 1);
+$color3: rgba(215, 25, 128, 1);
+$color5: rgba(239, 185, 11, 1);
+$light: rgba(255, 255, 255, 1);
+$dark: rgba(0, 0, 0, 1);
+
 body {
     font: 16px/1.25 $copy;
     background-color: $color1;
@@ -63,6 +64,7 @@ body {
 }
 a {
 	color: $color5;
+    text-shadow: 1px 1px $dark;
 }
 
 a:visited {
@@ -82,6 +84,7 @@ h4,
 h5 {
     font-family: $header;
     font-weight: bold;
+    text-shadow: 1px 1px $dark;
 }
 
 h1 {
@@ -99,7 +102,7 @@ h2 {
     font-size: 2.25em;
     text-align: left;
     color: $color1;
-    text-shadow: 1px 1px $dark;
+    
 }
 
 h2:nth-of-type(1) {
@@ -112,22 +115,22 @@ h2:nth-of-type(2) {
 
 h3 {
     position: relative;
-    z-index: 40;
-    font-size: 1.5em;
+    z-index: 20;
+    font-size: 2.25em;
     padding: 35px 0;
-    background-color: $dark;
-    color: $color2;
-    
+    background-color: $color1;
+    color: $color3;
+    border-top: 2px solid $color2;    
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 2.25em;
     line-height: .75em;
     color: $color3;
 }
 
 h5 {
-    font-size: 1.5em;
+    font-size: 2.25em;
     color: $color3;
    
 }
@@ -241,15 +244,8 @@ nav {
 main {}
 
 .about {
-    background: linear-gradient(
-        rgba(241,245,243, 0.8),
-        rgba(241,245,243, 0.8)
-        ),
-        url(../img/burrito-stack.jpg) no-repeat center center fixed;
-    margin-top:-50px;
-    min-width: 100%;
-    padding: 0;
-    margin: 0;
+        background: url(../../img/burrito-stack.jpg) no-repeat center center fixed;
+    
 
     h3 {
         top: 50px;
@@ -315,23 +311,24 @@ main {}
 .builder-menu {
     display: none;
     #builderBurrito {
-        color: $color2;
+        color: $color3;
     }
-    background-color: $dark;
+    background-color: $color1;
     
     a {
         color: $dark;
     }
     
     p {
-        color: $color1;
+        font-weight: bold;
+        color: $dark;
     }
 
     #builderBowl {
         color: $color5;
     }
     div {
-        background-color: $dark;
+        background-color: $color1;
         height: 240px;
     } 
 
@@ -350,7 +347,7 @@ main {}
         }
 
         th {
-            background-color: $dark;
+            background-color: $color1;
         }
 
         td {            
@@ -364,6 +361,8 @@ main {}
             height: 60px;
             font-weight: bold;
             border: 1px solid $dark;
+            background: radial-gradient(
+        $light 30%, $color2 );
         }
                
     }
@@ -457,19 +456,24 @@ main {}
 #order-message {
     position: relative;
     z-index: 20;    
-    top: -850px;
+    top: -920px;
     transition: all 1s ease-in-out 0s;
+    color: $dark;
 }
 .order-message {
     transform: scale(.5,.5);
 
     a {
-        color: $color5;
+        color: $dark;
     }
 
     button {
+        position: relative;
+        z-index: 30;
         padding: 5px;
-        border: 2px solid $color5;
+        font-size: 1.25em;
+        background: radial-gradient($light 30%, $color2);
+        border: 2px solid $dark;
         border-radius: 50%;
         height: 55px;
     }
@@ -493,11 +497,7 @@ main {}
 }
 .yelp {
     width: 100%;
-    background: linear-gradient(
-        rgba(241,245,243, 0.8),
-        rgba(241,245,243, 0.8)
-        ),
-        url(../img/burrito-stack.jpg) no-repeat center center fixed;
+    background: url(../../img/burrito-stack.jpg) no-repeat center center fixed;
     position: relative;
     z-index: 50;    
 }
@@ -530,14 +530,15 @@ footer {
     	}
 
         span.map-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    background-color: $color2;
-    opacity: .3;
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            top: 0;
+            left: 5%;
+            margin: 0 auto;
+            z-index: 3;
+            background-color: $color2;
+           
 }
 
 /* The z-index places the p tag under the span tag so it doesn't interfere with the click */
@@ -545,7 +546,7 @@ footer {
 p.map-overlay {
     position: absolute;
     top: 100px;
-    left: 20px;
+    left: 20%;
     z-index: 2;
     text-align: center;
     font: bold 2.25em/1em $header;
@@ -583,7 +584,7 @@ p.map-overlay {
     top: -300px;
 }
     #toppings {       
-    top: -550px;
+    top: -625px;
 }
 
 }       
