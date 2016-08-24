@@ -118,7 +118,7 @@ h3 {
     z-index: 20;
     font-size: 2.25em;
     padding: 35px 0;
-    background-color: $color1;
+    
     color: $color3;
     border-top: 2px solid $color2;    
 }
@@ -145,6 +145,7 @@ header {
     .hero-img {
         min-height: 600px;
         min-width: 100%;
+        position: relative;
         z-index: 0;
         padding: 0;
         margin: 0;
@@ -244,11 +245,12 @@ nav {
 main {}
 
 .about {
-        background: url(../../img/burrito-stack.jpg) no-repeat center center fixed;
-    
+    background: url(../../img/burrito-stack.jpg) no-repeat center center fixed;
+    position: relative;
+    z-index: 0;
 
     h3 {
-        top: 50px;
+        top: 0px;
     }
 	
 	img {
