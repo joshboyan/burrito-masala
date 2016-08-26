@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burrito Masala Food Cart | Portland Oregon</title>
     <link rel="icon" type="image/ico" href="img/logo.ico">
-    <link href='https://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/app.css">
 </head>
@@ -40,14 +39,22 @@
         <section class="about row">
             <!--/.about -->
             <h3>Burrito Masala Food Cart</h3>
-            <img src="img/james.jpg" alt="James Beard award">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum distinctio perferendis nihil veniam assumenda numquam eligendi ipsum, soluta suscipit voluptatem atque aliquid temporibus sequi, deserunt, iste consectetur cum animi alias!</p>
+            <div class="large-6 columns">
+                <img src="img/james.jpg" alt="James Beard award">
+            </div>
+            <div class="large-6 columns">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum distinctio perferendis nihil veniam assumenda numquam eligendi ipsum, soluta suscipit voluptatem atque aliquid temporibus sequi, deserunt, iste consectetur cum animi alias!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum distinctio perferendis nihil veniam assumenda numquam eligendi ipsum, soluta suscipit voluptatem atque aliquid temporibus sequi, deserunt, iste consectetur cum animi alias!</p>
+            </div>
         </section>
+        <img src="img/food/masala.jpg" data-rjs="2">
         <div id="menu"></div>
+        <!--Fallback for users with javascript disabled-->
         <section class="menu">
             <h3>Build Your Burrito</h3>
             <div class="row">
                 <figure class="small-6 columns">
+                    <!--data-rjs is for high resolution screens. When the script recognizes a HR screen it searches fo a replacement photo of the same name with @2x appended, burrito@2x.jpg in this case. This photo should be twice as large.-->
                     <img src="img/food/burrito.jpg" data-rjs="2" alt="Choose a Burrito">
                     <figcaption>Burrito</figcaption>
                 </figure>
@@ -93,9 +100,11 @@
             </div>
         </section>
         <!--/.menu -->
+        <!--Interctive burrito builder-->
         <section class="builder-menu">
-            <h3 id="title"><a href="#menu" id="builderBurrito">Burrito </a>or<a href="#menu" id="builderBowl"> Bowl</a></h3>
+            <h3><a href="#menu" id="builderBurrito">Burrito </a>Builder <br><span>or<a href="#menu" id="builderBowl"> Bowl</a></span></h3>
             <div id="foodPics">
+                <!--Image sources are inserted via javascript based on the data-source of the selection visitors make-->
                 <div id="tortillaImage"><img src="img/food/tortilla.png" data-rjs="2" alt=""></div>
                 <div id="proteinImage" class="proteinImage"></div>
                 <div id="riceImage" class="riceImage"></div>
@@ -108,36 +117,28 @@
                     <tr>
                         <td>
                             <a href="#menu">
-                                <button data-name="Chicken Tiki Masala" 
-                                data-price="6" 
-                                data-source="img/food/pork-verde.jpg" 
-                                data-path="img/food/rice/">Chicken Tiki Masala</button>
+                                <!--
+                                data-name= the name of the choice; shows in the order message
+                                data-price= the price of the choice; used to calculate total in order message
+                                data-source= the source of the image in your directory; used by javascript to insert correct photo -->
+                                <button data-name="Chicken Tikka Masala" data-price="6" data-source="img/food/pork-verde.jpg" data-path="img/food/rice/">Chicken Tiki Masala</button>
                             </a>
                         </td>
                         <td>
                             <a href="#menu">
-                                <button data-name="Lamb Curry" 
-                                data-price="6" 
-                                data-source="img/food/lamb-curry.jpg"
-                                data-path="img/food/rice/">Lamb Curry</button>
+                                <button data-name="Lamb Curry" data-price="6" data-source="img/food/lamb-curry.jpg" data-path="img/food/rice/">Lamb Curry</button>
                             </a>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <a href="#menu">
-                                <button data-name="Pork in Salsa Verde" 
-                                data-price="6" 
-                                data-source="img/food/pork-verde.jpg"
-                                data-path="img/food/rice/">Pork in Salsa Verde</button>
+                                <button data-name="Pork in Salsa Verde" data-price="6" data-source="img/food/pork-verde.jpg" data-path="img/food/rice/">Pork in Salsa Verde</button>
                             </a>
                         </td>
                         <td>
                             <a href="#menu">
-                                <button data-name="Sambar" 
-                                data-price="6" 
-                                data-source="img/food/lamb-curry.jpg"
-                                data-path="img/food/rice/">Sambar
+                                <button data-name="Sambar" data-price="6" data-source="img/food/lamb-curry.jpg" data-path="img/food/rice/">Sambar
                                     <br>(Vegan Lentil Curry)</button>
                             </a>
                         </td>
@@ -145,19 +146,13 @@
                     <tr>
                         <td>
                             <a href="#menu">
-                                <button data-name="Aloo Gobi Masala" 
-                                data-price="6" 
-                                data-source="img/food/pork-verde.jpg"
-                                data-path="img/food/rice/">Aloo Gobi Masala
+                                <button data-name="Aloo Gobi Masala" data-price="6" data-source="img/food/pork-verde.jpg" data-path="img/food/rice/">Aloo Gobi Masala
                                     <br>(Vegan Potato and Cauliflower)</button>
                             </a>
                         </td>
                         <td>
                             <a href="#menu">
-                                <button data-name="Chili Relle&#241;o" 
-                                data-price="6" 
-                                data-source="img/food/lamb-curry.jpg"
-                                data-path="img/food/rice/">Chili Relleno
+                                <button data-name="Chili Relle&#241;o" data-price="6" data-source="img/food/lamb-curry.jpg" data-path="img/food/rice/">Chili Relleno
                                     <br>(Vegetarian with Cheese)</button>
                             </a>
                         </td>
@@ -169,40 +164,25 @@
                     <tr>
                         <td>
                             <a href="#menu">
-                                <button class="toToppings"
-                                data-name="Kerala Biryani" 
-                                data-price="2" 
-                                data-source="img/food/white-rice.jpg"
-                                data-path="topping/">Kerala Biryani</button>
+                                <button class="toToppings" data-name="Kerala Biryani" data-price="2" data-source="img/food/white-rice.jpg" data-path="topping/">Kerala Biryani</button>
                             </a>
                         </td>
                         <td>
                             <a href="#menu">
-                                <button class="toToppings"
-                                data-name="Spanish Rice" 
-                                data-price="2" 
-                                data-source="img/food/spanish-rice.jpg"
-                                data-path="topping/">Spanish Rice</button>
+                                <button class="toToppings" data-name="Spanish Rice" data-price="2" data-source="img/food/spanish-rice.jpg" data-path="topping/">Spanish Rice</button>
                             </a>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <a href="#menu">
-                                <button class="toToppings" class="toToppings"
-                                data-name="Khaima" 
-                                data-price="2" 
-                                data-source="img/food/white-rice.jpg"
-                                data-path="topping/">Khaima
+                                <button class="toToppings" class="toToppings" data-name="Khaima" data-price="2" data-source="img/food/white-rice.jpg" data-path="topping/">Khaima
                                     <br>(Brown Rice)</button>
                             </a>
                         </td>
                         <td>
                             <a href="#menu">
-                                <button class="toToppings" data-name="White Rice" 
-                                data-price="2" 
-                                data-source="img/food/spanish-rice.jpg"
-                                data-path="topping/">White Rice</button>
+                                <button class="toToppings" data-name="White Rice" data-price="2" data-source="img/food/spanish-rice.jpg" data-path="topping/">White Rice</button>
                             </a>
                         </td>
                     </tr>
@@ -213,8 +193,7 @@
                             </a>
                         </td>
                         <td>
-                            <button></button>
-                            </a>
+                            <button></button>                     
                         </td>
                     </tr>
                 </table>
@@ -246,31 +225,54 @@
                     </tr>
                 </table>
                 <div id="order-message" class="order-message">
+                    <!--This message is inserted via javascript based on time of day and visitor choices-->
                     <p id="orderMessage"></p>
-                    
+                    <table>
+                        <tr>
+                            <td>
                     <a href="#"><button>Call Your Order</button></a>
+                    </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
                     <a href="#"><button>Text Your Order</button></a><br>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
                     <a href="#"><button><i class="fa fa-twitter"></i> Share <i class="fa fa-twitter"></i></button></a>
+                    </td>
+                    </tr>
+                    </table>
                 </div>
+                
                 </div>
         </section><!--/builder-menu-->
+        <!--Insert a link to view your full menu pdf here-->
+        <div class="pdf">
+        <a href="#"><button>Menu PDF</button></a>
+    </div>
         <section class="yelp row">
             <h3>Latest Reviews</h3>
+            <!--This can be updated by replacing cript at bottom of page with code from http://chrisawren.com/widgets/yelp/ -->
             <div id='yelpwidget'></div>
         </section>
         <!--/.yelp -->
+        <img src="img/food/veggies.jpg" data-rjs="2">
     </main>
     <div id="map"></div>
-    <footer class="row">
-        <section class="map large-3 column">
-
+    <footer>
+        <div  class="row">
+        <section class="map large-6 column">
             <div id="mapContainer">
+                <!-- you can place a <p> in the span if you would like to add a message to the overlay-->
                 <a href="#" id="click2hide"><span class="map-overlay"></span></a>
             <div id="googleMap"></div>
             </div>
         </section>
         <!--/.map -->
-        <section class="contact large-3 column" id="contact">
+        <section class="contact large-4 column" id="contact">
             <ul>
                 <li><a href="#map"><i class="fa fa-map-marker"></i>&nbsp;321 SW Alder Ave Portland, Oregon</a></li>
                 <br>
@@ -280,30 +282,34 @@
             </ul>
         </section>
         <!--/.contact -->
-        <section class="social large-3 column">
+        <section class="social large-2 column">
             <ul>
                 <li><a href="#" aria-label="Link to Facebook"><i class="fa fa-facebook-square"></i></a></li>
                 <li><a href="#" aria-label="Link to Instagram"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="#" aria-label="Link to Google+"><i class="fa fa-google-plus-square"></i></a></li>
-                <li><a href="#" aria-label="Link to Trip Advisor"><i class="fa fa-tripadvisor" role=></i></a></li>
+                <li><a href="#" aria-label="Link to Trip Advisor"><i class="fa fa-tripadvisor"></i></a></li>
                 <li><a href="#" aria-label="Link to Yelp!"><i class="fa fa-yelp"></i></a></li>
             </ul>
         </section>
         <!--/.social -->
-        <section class="copy">
+    </div>
+    <div  class="row">
+        <section class="copy row">
             <span>&copy; Burrito Masala 2016</span>
             <a href="#top" aria-label="Return to top of page"><i class="fa fa-arrow-up"></i></a>
         </section>
+    </div>
         <!--/.copy -->
     </footer>
-    
+    <!-- This is the code for the social sharing widget. Modify at https://www.addthis.com/dashboard#get-the-code/pub/ra-5795142494df273f -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5795142494df273f"></script>
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/what-input/what-input.js"></script>
-    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/what-input/what-input.min.js"></script>
+    <script src="bower_components/foundation-sites/dist/foundation.min.js"></script>
     <script type="text/javascript" src="bower_components/retinajs/dist/retina.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <!--This script retrieves Yelp! info-->
     <script>(function() { var s = document.createElement("script");s.async = true;s.onload = s.onreadystatechange = function(){getYelpWidget("boo-boo-records-inc-san-luis-obispo","300","RED","y","y","3");};s.src='http://chrisawren.com/widgets/yelp/yelpv2.js' ;var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();</script>
     <script src="dist/js/app.js"></script>
     
