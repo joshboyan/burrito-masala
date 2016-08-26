@@ -370,7 +370,7 @@ function initialize() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-    var image = '../img/elephant-marker.png';
+    var image = '/img/elephant-marker.png';
     var elephantmarker = new google.maps.Marker({
         position: { lat: 45.520412, lng: -122.680802 },
         map: map,
