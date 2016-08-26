@@ -45,42 +45,44 @@
 // @include foundation-flex-classes;
 @include motion-ui-transitions;
 @include motion-ui-animations;
-$header: 'Ovo',
-serif;
-$copy: 'Muli',
+$header: 'Luckiest Guy',
+cursive;
+$copy: 'Oswald',
 sans-serif;
 $color1: rgba(241, 245, 243, 1);
-$color2: rgba(101, 163, 160, .4);
+$color2: rgba(101, 163, 160, 1);
 $color4: rgba(192, 26, 22, 1);
 $color3: rgba(215, 25, 128, 1);
 $color5: rgba(239, 185, 11, 1);
 $light: rgba(255, 255, 255, 1);
 $dark: rgba(0, 0, 0, 1);
-
 body {
     font: 16px/1.25 $copy;
-    background-color: $color1;
+    background-color: $light;
     text-align: center;
 }
+
 a {
-	color: $color5;
+    color: $color5;
     text-shadow: 1px 1px $dark;
 }
 
 a:visited {
     color: $color5;
 }
+
 a:hover {
-	color: $color4;
+    color: $color5;
 }
 
 a:active {
-	color: $color5;
+    color: $color5;
 }
+
 h1,
 h2,
 h3,
-h4, 
+h4,
 h5 {
     font-family: $header;
     font-weight: bold;
@@ -90,6 +92,7 @@ h5 {
 h1 {
     position: absolute;
     top: 150px;
+    left: 1em;
     font-size: 3.75em;
     line-height: 1em;
     text-align: left;
@@ -99,10 +102,11 @@ h1 {
 
 h2 {
     position: absolute;
-    font-size: 2.25em;
+    left: 1em;
+    font-size: 2em;
     text-align: left;
     color: $color1;
-    
+    text-shadow: 3px 3px $dark;
 }
 
 h2:nth-of-type(1) {
@@ -117,22 +121,36 @@ h3 {
     position: relative;
     z-index: 20;
     font-size: 2.25em;
-    padding: 35px 0;
-    
+    padding: 45px 0;
     color: $color3;
-    border-top: 2px solid $color2;    
+    overflow: hidden;
+    :after {
+        content: "";
+        position: absolute;
+        top: -25px;
+        right: 0;
+        width: 150%;
+        height: 50px;
+        background: $color2;
+        transform-origin: 70% 0;
+        transform: rotate(-2deg);
+        z-index: -1;
+    }
 }
 
 h4 {
-    font-size: 2.25em;
-    line-height: .75em;
+    font-size: 1.75em;
+    line-height: 1.2em;
     color: $color3;
 }
 
 h5 {
     font-size: 2.25em;
     color: $color3;
-   
+}
+
+.row {
+    max-width: 100%;
 }
 
 ul {
@@ -151,28 +169,17 @@ header {
         margin: 0;
     }
     #elephant-marker {
+        display: none;
         position: absolute;
         top: 175px;
-        right: 20px;
+        right: 200px;
         width: 75px;
     }
     .wiggle {
         @include mui-animation(wiggle(5deg));
     }
 }
-
-.persistant-arrow {
-    position: fixed;
-    display: none;
-    z-index: 100;
-    bottom: 50px;
-    right: 20px;
-    width: 60px;
-    background: $dark;
-    border: 1px solid $color5;
-    border-radius: 50%;
-    font-size: 45px;
-}
+//Masthead navigation
 nav {
     position: fixed;
     width: 100%;
@@ -180,18 +187,17 @@ nav {
     text-align: right;
     z-index: 200;
     transition: all .75s ease-in-out 0s;
-
     img {
         position: fixed;
         width: 33%;
         max-width: 200px;
         left: 0;
         right: 0;
+        top: 0;
         transition: scale .35s ease-in-out 0s;
     }
     ul {
         background-color: $dark;
-
     }
     li {
         display: inline;
@@ -203,11 +209,12 @@ nav {
     li:nth-of-type(3) {
         margin-right: 30px;
     }
-
+    //Hamburger submenu
     .menu-icon {
-    	color: $color5;
+        color: $color5;
     }
 }
+
 .hide-nav {
     position: relative;
     transition: all .2s ease-in-out 0s;
@@ -216,6 +223,7 @@ nav {
 .position-header-img {
     margin: -25px 0 0 0;
 }
+
 #submenu {
     clear: both;
     width: 40%;
@@ -225,7 +233,7 @@ nav {
 
 .submenu {
     display: none;
-    margin: -20px -100% 0 60%;
+    margin: -17px -100% 0 60%;
     float: right;
     height: 1px;
     li {
@@ -236,7 +244,7 @@ nav {
 .show {
     display: block;
     position: fixed;
-    margin: -20px 0 0 60%;
+    margin: -17px 0 0 60%;
     li {
         display: block;
     }
@@ -245,57 +253,61 @@ nav {
 main {}
 
 .about {
-    background: url(../../img/burrito-stack.jpg) no-repeat center center fixed;
+    background: $light;
     position: relative;
     z-index: 0;
-
-    h3 {
+    width: 100%;
+    h3:after {
+        content: "";
+        position: absolute;
         top: 0px;
+        right: 0;
+        width: 150%;
+        height: 50px;
+        background: $color2;
+        transform-origin: 100% 0%;
+        transform: rotate(2deg);
+        z-index: -1;
     }
-	
-	img {
-    	position: relative;
+    img {
+        position: relative;
         width: 40%;
-        margin: 70px 0;
+        max-width: 300px;
+        margin: 0 0 40px 0;
         border-radius: 50%;
         z-index: 20;
     }
     p {
-    	position: relative;
-    	z-index: 20;
-    	font-weight: bold;
+        position: relative;
+        z-index: 20;
     }
 }
-.hide {
-    display: none;
-}
-.show {
-    display: block;
-}
-.menu {
-    
-	position: relative;
-	z-index: 20;
 
+
+//Styling for fallback menu section when visitors have javascript disabled
+.menu {
+    //add display:none; on page load via javascript
+
+    position: relative;
+    z-index: 20;
     figure {
-        display: inline-block;
-        width: 50%;        
+        display: inline-block;    
+        width: 50%;
         margin: 0;
-        text-align: center;        
+        text-align: center;
     }
-    
+    //Text overlay of menu images
     figcaption {
         position: relative;
         top: -1.25em;
         font: 1.5em/1.25em $header;
-        background: linear-gradient(to bottom, rgba(243,241, 245,0) 0%,rgba(243,241, 245,.95) 100%);
+        background: linear-gradient(to bottom, rgba(243, 241, 245, 0) 0%, rgba(243, 241, 245, .95) 100%);
         color: $dark;
         text-shadow: 1px 1px $color1;
     }
-
-	div:nth-of-type(4) {
-		margin-bottom: 10px;
-	}
+    div:nth-of-type(4) {
+        margin-bottom: 10px;
+    }
     button {
         background-color: $dark;
         height: 125px;
@@ -306,99 +318,94 @@ main {}
         border-radius: 50%;
         margin: 10px;
     }
-
 }
-
-
+//Styling for interactive burrito builder
 .builder-menu {
-    display: none;
+    display: none;//changed to block on page load via javascript
+    position: relative;
+    z-index: 0;
+    padding-bottom: 25px;
+    //Style the header
     #builderBurrito {
         color: $color3;
     }
-    background-color: $color1;
-    
+    background-color: $light;
     a {
         color: $dark;
     }
-    
     p {
         font-weight: bold;
         color: $dark;
     }
-
+    h3 {
+        line-height: .85em;
+    }
+    span {
+        margin-left: 30%;
+    }
     #builderBowl {
         color: $color5;
     }
     div {
-        background-color: $color1;
+        background-color: $light;
         height: 240px;
-    } 
-
-    #foodPics { 
-        position: relative; 
-        top:-40px;
-        height: 150px;      
-        background-color: $dark;
+    }
+    //container for food photos
+    #foodPics {
+        position: relative;
+        top: -40px;
+        height: 150px;
+        background-color: $light;
         overflow: hidden;
     }
+    //Menu buttons for user to select
     table {
         position: relative;
-        
         tbody {
             border: none;
         }
-
         th {
-            background-color: $color1;
+            background-color: $light;
         }
-
-        td {            
+        td {
             margin: 0;
             padding: 0;
-            background-color: $color1;
+            background-color: $light;
         }
-
         button {
             width: 100%;
             height: 60px;
             font-weight: bold;
-            border: 1px solid $dark;
-            background: radial-gradient(
-        $light 30%, $color2 );
+            border: 2px solid $light;
+            background-color: $color5;
+                      
         }
-               
     }
-    
     table:nth-of-type(3) {
-
-        td {            
+        td {
             margin: 0;
             padding: 0;
         }
-        
         button {
             height: 45px;
-            
             :last-child {
                 color: $color3;
             }
-
         }
     }
-
-   
-
     #order {
         color: $color5;
     }
-
 }
+
+//Styles for images that are inserted via javascript
 #tortillaImage {
     position: relative;
     z-index: 80;
     height: 150px;
     transition: all 1s ease-in-out 0s;
 }
+
 .proteinImage {
     position: relative;
     z-index: 70;
@@ -408,7 +415,7 @@ main {}
     transition: all 1s ease-in-out 0s;
 }
 
-.riceImage{
+.riceImage {
     position: relative;
     z-index: 35;
     height: 150px;
@@ -417,7 +424,7 @@ main {}
     transition: all 1s ease-in-out 0s;
 }
 
-.burritoImage{
+.burritoImage {
     position: relative;
     z-index: 20;
     height: 150px;
@@ -426,83 +433,124 @@ main {}
     transition: all 1s ease-in-out 0s;
 }
 
+//Stack the menu categories, shirnk the bottom ones and set up transitions
 #protein {
-    
     position: relative;
-    z-index: 100; 
-    top: -40px;   
+    z-index: 100;
+    top: -40px;
     transition: all 1s ease-in-out 0s;
 }
 
 #rice {
     position: relative;
-    z-index: 40;    
-    top: -330px;
-    transition: all 1s ease-in-out 0s;    
-}
-.rice {
-    transform: scale(.5,.5);
-}
-#toppings {
-    position: relative;
-    z-index: 30;    
-    top: -590px;
+    z-index: 40;
+    top: -340px;
     transition: all 1s ease-in-out 0s;
 }
-.toppings {
-    transform: scale(.5,.5);
+
+.rice {
+    transform: scale(.25, .25);
 }
+
+#toppings {
+    position: relative;
+    z-index: 30;
+    top: -680px;
+    transition: all 1s ease-in-out 0s;
+}
+
+.toppings {
+    transform: scale(.25, .25);
+}
+
 .selected {
     color: $color4;
 }
+
 #order-message {
     position: relative;
-    z-index: 20;    
-    top: -920px;
+    z-index: 20;
+    top: -940px;
     transition: all 1s ease-in-out 0s;
     color: $dark;
 }
-.order-message {
-    transform: scale(.5,.5);
 
+.order-message {
+    transform: scale(.25, .25);
     a {
         color: $dark;
     }
-
     button {
         position: relative;
         z-index: 30;
         padding: 5px;
         font-size: 1.25em;
-        background: radial-gradient($light 30%, $color2);
-        border: 2px solid $dark;
-        border-radius: 50%;
+        border: 2px solid $light;
         height: 55px;
+        width: 200px;
     }
-
     span {
         font-size: 1.25em;
     }
 }
-.slideLeft {
-        width: 150px;
-        transition: all 1s ease-in-out 0s;
-        margin-left: -400%;
-        margin-right: 0;
+
+.pdf {
+    padding-bottom: 15px;
+    a {
+        color: $dark;
     }
+    a:visited {
+        color: $dark;
+    }
+    a:hover {
+        color: $dark;
+    }
+    a:active {
+        color: $dark;
+    }
+    button {
+        padding: 5px;
+        font-size: 1.25em;
+        border: 2px solid $light;
+        background-color: $color5;
+        height: 55px;
+        width: 200px;
+    }
+}
+
+.slideLeft {
+    width: 150px;
+    transition: all 1s ease-in-out 0s;
+    margin-left: -400%;
+    margin-right: 0;
+}
+
 .slideIn {
     transition: all 1s ease-in-out 0s;
     margin: 0%;
 }
+
 .scaleUp {
-    transform: scale(1,1);
+    transform: scale(1, 1);
 }
+//Styling the reviews
 .yelp {
     width: 100%;
-    background: url(../../img/burrito-stack.jpg) no-repeat center center fixed;
-    position: relative;
-    z-index: 50;    
+    background: $light;
+    h3:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150%;
+        height: 50px;
+        background: $color2;
+        transform-origin: 100% 0;
+        transform: rotate(2deg);
+        z-index: -1;
+    }
 }
+
 #yelp {
     width: 90%;
     margin: 0 auto;
@@ -519,18 +567,15 @@ footer {
     .map {
         #mapContainer {
             position: relative;
-            z-index: 1; 
+            z-index: 1;
         }
-
-    	#googleMap {
-    		width: 90%;
-        	height: 400px;
-        	margin: 0 auto; 
+        #googleMap {
+            width: 90%;
+            height: 400px;
+            margin: 0 auto;
             position: relative;
             z-index: -1;
-    	
-    	}
-
+        }
         span.map-overlay {
             position: absolute;
             width: 90%;
@@ -540,31 +585,27 @@ footer {
             margin: 0 auto;
             z-index: 3;
             background-color: $color2;
-           
-}
-
-/* The z-index places the p tag under the span tag so it doesn't interfere with the click */
-
-p.map-overlay {
-    position: absolute;
-    top: 100px;
-    left: 20%;
-    z-index: 2;
-    text-align: center;
-    font: bold 2.25em/1em $header;
-    color: $dark;
-    
-}
-
+            opacity: .4;
+        }
+        //The z-index places the p tag under the span tag so it doesn't interfere with the click 
+        p.map-overlay {
+            position: absolute;
+            top: 100px;
+            left: 20%;
+            z-index: 2;
+            text-align: center;
+            font: bold 2.25em/1em $header;
+            color: $dark;
+        }
     }
     .contact {
         ul {
-            margin-left: -15px;
+            margin: 45px 0 0 -15px;
         }
         li {
             font-size: 1.5em;
+            line-height: 2em;
         }
-
     }
     .social {
         li {
@@ -575,18 +616,80 @@ p.map-overlay {
 }
 
 .copy {
+    width: 100%;
     i {
         font-size: 45px;
         padding-left: 35px;
     }
 }
-
+//Chrome specific media queies
 @supports (-webkit-appearance:none) {
     #rice {
-    top: -300px;
+        top: -300px;
+    }
+    #toppings {
+        top: -625px;
+    }
 }
-    #toppings {       
-    top: -625px;
+//Firefox specific
+@-moz-document url-prefix() {
+    #order-message {
+        top: -990px;
+    }
 }
 
-}       
+//Tablet and up
+@media only screen and (min-width: 769px) {
+    body {
+        font-size: 24px;
+    }
+    header {
+        height: 600px;
+        overflow: hidden;
+    }
+    .about img {
+        width: 60%;
+    }
+    .hero-img {
+        top: -400px;
+    }
+    h1,
+    h2 {
+        padding-left: 20%;
+    }
+    h2:nth-of-type(1) {
+        top: 375px;
+    }
+    h2:nth-of-type(2) {
+        top: 525px;
+    }
+    #elephant-marker {
+        display: block;
+    }
+    table {
+        width: 70%;
+        margin: 0 auto;
+    }
+    #order-message {
+        top: -1040px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    #yelp {
+        display: inline;
+    }
+    #yelpwidget {
+        padding: 0 15%;
+    }
+    .social li {
+        display: block;
+    }
+    @supports (-webkit-appearance:none) {
+        #rice {
+            top: -350px;
+        }
+        #toppings {
+            top: -725px;
+        }
+    }
+}
