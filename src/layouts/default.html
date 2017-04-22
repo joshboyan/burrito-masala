@@ -1,0 +1,31 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burrito Masala Food Cart | Portland Oregon</title>
+    <link rel="icon" type="image/ico" href="img/logo.ico">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body>
+
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+    {{> body}}
+<!-- This is the code for the social sharing widget. Modify at https://www.addthis.com/dashboard#get-the-code/pub/ra-5795142494df273f -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5795142494df273f"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAwpr62dzZ3ASScNSoVJpXciBv3cT6rws"
+  type="text/javascript"></script>
+    <!--This script retrieves Yelp! info-->
+    <script>(function() { var s = document.createElement("script");s.async = true;s.onload = s.onreadystatechange = function(){getYelpWidget("boo-boo-records-inc-san-luis-obispo","300","RED","y","y","3");};s.src='http://chrisawren.com/widgets/yelp/yelpv2.js' ;var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();</script>
+    <script src="{{root}}assets/js/app.js"></script>
+    
+</body>
+
+</html>

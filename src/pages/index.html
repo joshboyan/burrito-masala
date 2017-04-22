@@ -1,0 +1,286 @@
+ <header>
+        <a href="#" class="sr-only" id="top">Skip to content</a>
+        <nav>
+            <a href="#top"><img src="assets/img/logo1.png" data-rjs="2" alt="Burrito Masala Logo"></a>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#map">Map</a></li>
+                <li id="toggle">
+                    <a href="#"><i class="fa fa-navicon"></i></a></li>
+            </ul>
+            <ul id="submenu" class="submenu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <img class="hero-img" src="assets/img/food-cart.jpg" data-rjs="2" alt="Hero Image">
+        <h1>Burrito<br>Masala</h1>
+        <h2>321 SW Alder Ave Portland, Oregon</h2>
+        <h2>Everyday 11-7</h2>
+    </header>
+    <main>
+        <section class="about row">
+            <!--/.about -->
+            <h3>Burrito Masala Food Cart</h3>
+            <div class="large-6 columns">
+                <img src="assets/img/james.jpg" alt="James Beard award">
+            </div>
+            <div class="large-6 columns">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum distinctio perferendis nihil veniam assumenda numquam eligendi ipsum, soluta suscipit voluptatem atque aliquid temporibus sequi, deserunt, iste consectetur cum animi alias!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum distinctio perferendis nihil veniam assumenda numquam eligendi ipsum, soluta suscipit voluptatem atque aliquid temporibus sequi, deserunt, iste consectetur cum animi alias!</p>
+            </div>
+        </section>
+        <img src="assets/img/food/masala.jpg" data-rjs="2">
+        <div id="menu"></div>
+        <!--Fallback for users with javascript disabled-->
+        <section class="menu">
+            <h3>Build Your Burrito</h3>
+            <div class="row">
+                <figure class="small-6 columns">
+                    <!--data-rjs is for high resolution screens. When the script recognizes a HR screen it searches fo a replacement photo of the same name with @2x appended, burrito@2x.jpg in this case. This photo should be twice as large.-->
+                    <img src="assets/img/food/burrito.jpg" data-rjs="2" alt="Choose a Burrito">
+                    <figcaption>Burrito</figcaption>
+                </figure>
+                <figure class="small-6 columns">
+                    <img src="assets/img/food/bowl.jpg" data-rjs="2" alt="Choose a Bowl">
+                    <figcaption>Bowl</figcaption>
+                </figure>
+            </div>
+            <h5>Pick Your Protein</h5>
+            <div class="row">
+                <figure class="small-6 columns">
+                    <img src="assets/img/food/lamb-curry.jpg" data-rjs="2" alt="Featured meat choice">
+                    <figcaption>Lamb Curry</figcaption>
+                </figure>
+                <figure class="small-6 columns">
+                    <img src="assets/img/food/pork-verde.jpg" data-rjs="2" alt="Featured veggie choice">
+                    <figcaption>Pork Verde</figcaption>
+                </figure>
+            </div>
+            <h5>Pick Your Rice</h5>
+            <div class="row">
+                <figure class="small-6 columns">
+                    <img src="assets/img/food/spanish-rice.jpg" data-rjs="2" alt="Spanish rice">
+                    <figcaption>Spanish</figcaption>
+                </figure>
+                <figure class="small-6 columns">
+                    <img src="assets/img/food/white-rice.jpg" data-rjs="2" alt="Indian rice">
+                    <figcaption>White</figcaption>
+                </figure>
+            </div>
+            <h5>Pick Your Toppings</h5>
+            <div class="row">
+                <img class="small-3 columns" src="assets/img/food/guacamole.jpg" data-rjs="2" alt="Featured meat choice">
+                <img class="small-3 columns" src="assets/img/food/raita.jpg" data-rjs="2" alt="Featured veggie choice">
+                <img class="small-3 columns" src="assets/img/food/cheese.jpg" data-rjs="2" alt="Featured meat choice">
+                <img class="small-3 columns" src="assets/img/food/salsa.jpg" data-rjs="2" alt="Featured veggie choice">
+            </div>
+            <div class="row">
+                <button class="small-5 column"><a href="#">Full Menu</a>
+                </button>
+                <button class="small-5 column"><a href="tel:+1-503-555-5555"><i class="fa fa-phone"></i> Order</a>
+                </button>
+            </div>
+        </section>
+        <!--/.menu -->
+        <!--Interctive burrito builder-->
+        <section class="builder-menu">
+            <h3><a href="#menu" id="builderBurrito">Burrito </a>Builder <br><span>or<a href="#menu" id="builderBowl"> Bowl</a></span></h3>
+            <div id="foodPics">
+                <!--Image sources are inserted via javascript based on the data-source of the selection visitors make-->
+                <div id="tortillaImage"><img src="assets/img/food/tortilla.png" data-rjs="2" alt=""></div>
+                <div id="proteinImage" class="proteinImage"></div>
+                <div id="riceImage" class="riceImage"></div>
+                <div id="burritoImage" class="burritoImage"><img src="assets/img/food/burrito.png" data-rjs="2"></div>
+            </div>
+            <div>
+                <table id="protein">
+                    <th colspan="2">
+                        <h4>Pick Your Protein</h4></th>
+                    <tr>
+                        <td>
+                            <a href="#menu">
+                                <!--
+                                data-name= the name of the choice; shows in the order message
+                                data-price= the price of the choice; used to calculate total in order message
+                                data-source= the source of the image in your directory; used by javascript to insert correct photo -->
+                                <button data-name="Chicken Tikka Masala" data-price="6" data-source="assets/img/food/pork-verde.jpg" data-path="assets/img/food/rice/">Chicken Tiki Masala</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#menu">
+                                <button data-name="Lamb Curry" data-price="6" data-source="assets/img/food/lamb-curry.jpg" data-path="assets/img/food/rice/">Lamb Curry</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#menu">
+                                <button data-name="Pork in Salsa Verde" data-price="6" data-source="assets/img/food/pork-verde.jpg" data-path="assets/img/food/rice/">Pork in Salsa Verde</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#menu">
+                                <button data-name="Sambar" data-price="6" data-source="assets/img/food/lamb-curry.jpg" data-path="img/food/rice/">Sambar
+                                    <br>(Vegan Lentil Curry)</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#menu">
+                                <button data-name="Aloo Gobi Masala" data-price="6" data-source="assets/img/food/pork-verde.jpg" data-path="assets/img/food/rice/">Aloo Gobi Masala
+                                    <br>(Vegan Potato and Cauliflower)</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#menu">
+                                <button data-name="Chili Relle&#241;o" data-price="6" data-source="assets/img/food/lamb-curry.jpg" data-path="assets/img/food/rice/">Chili Relleno
+                                    <br>(Vegetarian with Cheese)</button>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table id="rice" class="rice">
+                    <th colspan="2">
+                        <h4>Pick Your Rice</h4></th>
+                    <tr>
+                        <td>
+                            <a href="#menu">
+                                <button class="toToppings" data-name="Kerala Biryani" data-price="2" data-source="assets/img/food/white-rice.jpg" data-path="topping/">Kerala Biryani</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#menu">
+                                <button class="toToppings" data-name="Spanish Rice" data-price="2" data-source="assets/img/food/spanish-rice.jpg" data-path="topping/">Spanish Rice</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#menu">
+                                <button class="toToppings" class="toToppings" data-name="Khaima" data-price="2" data-source="assets/img/food/white-rice.jpg" data-path="topping/">Khaima
+                                    <br>(Brown Rice)</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#menu">
+                                <button class="toToppings" data-name="White Rice" data-price="2" data-source="assets/img/food/spanish-rice.jpg" data-path="topping/">White Rice</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#menu">
+                                <button id="back2Protein">Back</button>
+                            </a>
+                        </td>
+                        <td>
+                            <button></button>                     
+                        </td>
+                    </tr>
+                </table>
+                <table id="toppings" class="toppings">
+                    <th colspan="3" height="20">
+                        <h4>Pick Your Toppings<h4></th>
+                    <tr>
+                        <td colspan="2"><a href="#menu"><button data-price="0">Grandma Nena's Fiery Salsa</button></a></td>
+                        <td><a href="#menu"><button data-price="0">Mango Chutney</button></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#menu"><button data-price="0">Tomatillo Salsa</button></a></td>
+                        <td><a href="#menu"><button data-price="0">Raita</button></a></td>
+                        <td><a href="#menu"><button data-price="0">Cheese</button></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#menu"><button data-price="0">Sour Cream</button></a></td>
+                        <td><a href="#menu"><button data-price="0">Onions</button></a></td>
+                        <td><a href="#menu"><button data-price="0">Tomatoes</button></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#menu"><button data-price="0">Cucumbers</button></a></td>
+                        <td><a href="#menu"><button data-price="0">Cilantro</button></a></td>
+                        <td><a href="#menu"><button data-price=".75">Gaucamole</button></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#menu"><button id="back2Rice">Back</button></a></td>
+                        <td colspan="2"><a href="#menu"><button id="finish">Finished</button></a></td>
+                    </tr>
+                </table>
+                <div id="order-message" class="order-message">
+                    <!--This message is inserted via javascript based on time of day and visitor choices-->
+                    <p id="orderMessage"></p>
+                    <table>
+                        <tr>
+                            <td>
+                    <a href="#"><button>Call Your Order</button></a>
+                    </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                    <a href="#"><button>Text Your Order</button></a><br>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <a href="#"><button><i class="fa fa-twitter"></i> Share <i class="fa fa-twitter"></i></button></a>
+                    </td>
+                    </tr>
+                    </table>
+                </div>
+                
+                </div>
+        </section><!--/builder-menu-->
+        <!--Insert a link to view your full menu pdf here-->
+        <div class="pdf">
+        <a href="#"><button>Menu PDF</button></a>
+    </div>
+        <section class="yelp row">
+            <h3>Latest Reviews</h3>
+            <!--This can be updated by replacing cript at bottom of page with code from http://chrisawren.com/widgets/yelp/ -->
+            <div id='yelpwidget'></div>
+        </section>
+        <!--/.yelp -->
+        <img src="assets/img/food/veggies.jpg" data-rjs="2">
+    </main>
+    <div id="map"></div>
+    <footer>
+        <div  class="row">
+        <section class="map large-6 column">
+            <div id="mapContainer">
+                <!-- you can place a <p> in the span if you would like to add a message to the overlay-->
+                <a href="#" id="click2hide"><span class="map-overlay"></span></a>
+            <div id="googleMap"></div>
+            </div>
+        </section>
+        <!--/.map -->
+        <section class="contact large-4 column" id="contact">
+            <ul>
+                <li><a href="#map"><i class="fa fa-map-marker"></i>&nbsp;321 SW Alder Ave Portland, Oregon</a></li>
+                <br>
+                <li><a href="tel:+1-503-555-5555"><i class="fa fa-phone" aria-label="Phone Number, Click to call"></i>&nbsp;(503)555-5555</li></a>
+                    <br>
+                    <li><a href="mailto:chef@burritomasala.com? Subject=Email%20from%20website" target="blank"><i class="fa fa-envelope-o" aria-label="Email address, Click to compose email"></i>&nbsp;chef@burritomasala.com</a></li>
+            </ul>
+        </section>
+        <!--/.contact -->
+        <section class="social large-2 column">
+            <ul>
+                <li><a href="#" aria-label="Link to Facebook"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="#" aria-label="Link to Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" aria-label="Link to Google+"><i class="fa fa-google-plus-square"></i></a></li>
+                <li><a href="#" aria-label="Link to Trip Advisor"><i class="fa fa-tripadvisor"></i></a></li>
+                <li><a href="#" aria-label="Link to Yelp!"><i class="fa fa-yelp"></i></a></li>
+            </ul>
+        </section>
+        <!--/.social -->
+    </div>
+    <div  class="row">
+        <section class="copy row">
+            <span>&copy; Burrito Masala 2016</span>
+            <a href="#top" aria-label="Return to top of page"><i class="fa fa-arrow-up"></i></a>
+        </section>
+    </div>
+        <!--/.copy -->
+    </footer>
