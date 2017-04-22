@@ -1,71 +1,19 @@
-# ZURB Template
+# Burrito Masala website
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](https://david-dm.org/zurb/foundation-zurb-template#info=devDependencies)
+This is a website I built for a theoretical food cart in my UX/UI class as part of my coursework for my Associates degree. The client requirements were a one page site that highlighted their 'Chipotle style' build your own burrito menu.
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
+To satisfy these requirements I did some preliminary research on foodcarts in thier area to figure out what features other sites implemented well and where these sites were lacking in UX/UI and accessibilty best practices. After this initial research I created two user personas of the carts ideal customers so I had an idea of who I was building this site for. From there I created wireframes and content inventories for the features of the site. I coded the site using the Zurb foundation Framework.
 
-This is the official ZURB Template for use with [Foundation for Sites](http://foundation.zurb.com/sites). We use this template at ZURB to deliver static code to our clients. It has a Gulp-powered build system with these features:
+Features of the site include:
 
-- Handlebars HTML templates with Panini
-- Sass compilation and prefixing
-- JavaScript concatenation
-- Built-in BrowserSync server
-- For production builds:
-  - CSS compression
-  - JavaScript compression
-  - Image compression
+- Mobile-first, responsive design.
+- A custom logo and google maps icon I created in Adobe Illustrator.
+- Scroll sensitive menu bar.
+- Smooth scrolling to inpage anchor links.
+- Social media integration using the AddThis sidebar widget.
+- Custom Photo editing using Adobe Photoshop
+- An in-page 'burrito-builder' application for users to place their orders with integrated Twitter API.
+- A classic photo gallery and list to replace the 'burrito-builder' for users without JavaScript eneabled.
+- Yelp review widget.
+- Google Maps API integration with layover to avoid mobile users getting 'trapped'.
 
-## Installation
-
-To use this template, your computer needs:
-
-- [NodeJS](https://nodejs.org/en/) (0.12 or greater)
-- [Git](https://git-scm.com/)
-
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
-
-### Using the CLI
-
-Install the Foundation CLI with this command:
-
-```bash
-npm install foundation-cli --global
-```
-
-Use this command to set up a blank Foundation for Sites project with this template:
-
-```bash
-foundation new --framework sites --template zurb
-```
-
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-Now `cd` to your project name and to start your project run 
-
-```bash
-foundation watch
-```
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-zurb-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-npm install
-bower install
-```
-
-Finally, run `npm start` to run Gulp. Your finished site will be created in a folder called `dist`, viewable at this URL:
-
-```
-http://localhost:8000
-```
-
-To create compressed, production-ready assets, run `npm run build`.
