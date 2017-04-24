@@ -15,7 +15,7 @@ var hours = currentTime.getHours();
 var mins = currentTime.getMinutes();
 
 // When user selects protein button
-$('#protein tr td button').click(function() {
+$('#protein tr td button').on('click', function() {
 
     //Transtion to rice menu
     $('#protein').addClass('slideLeft');
@@ -45,10 +45,13 @@ $('#protein tr td button').click(function() {
     var img = $('<img>');
     img.attr('src', proteinSource).attr('data-rjs', '2');
     img.appendTo('#proteinImage');
+
+    //Track this event in Google Analytics
+    ga('send', 'event', 'click', 'burrito-masala', 'Chose protein');
 });
 
 //When user selects back on rice menu
-$('#back2Protein').click(function() {
+$('#back2Protein').on('click', function() {
 
     //Transition back to protein selection menu
     $('#protein').removeClass('slideLeft');
@@ -78,7 +81,7 @@ $('#back2Protein').click(function() {
 });
 
 //When user selects rice button
-$('.toToppings').click(function() {
+$('.toToppings').on('click', function() {
 
     //Transtion to toppings menu
     $('#rice').addClass('slideLeft');
@@ -112,10 +115,13 @@ $('.toToppings').click(function() {
     var img = $('<img>');
     img.attr('src', riceSource).attr('data-rjs', '2');
     img.appendTo('#riceImage')
+
+    //Track this event in Google Analytics
+    ga('send', 'event', 'click', 'burrito-masala', 'Chose rice');
 });
 
 //User back button on toppings selection menu
-$('#back2Rice').click(function() {
+$('#back2Rice').on('click', function() {
 
     //Transition back to rice slection menu
     $('#rice').removeClass('slideLeft');
@@ -150,7 +156,7 @@ $('#back2Rice').click(function() {
 });
 
 //When user clicks a topping button
-$('#toppings tr td button').click(function() {
+$('#toppings tr td button').on('click', function() {
 
     //Toggle hightlight on topping buttons user clicks on
     $(this).toggleClass('selected');
@@ -170,7 +176,7 @@ $('#toppings tr td button').click(function() {
 });
 
 //When user clicks finished
-$('#finish').click(function() {
+$('#finish').on('click', function() {
 
     //Transition to order message and
     $('#toppings').addClass('slideLeft');
@@ -230,4 +236,6 @@ $('#finish').click(function() {
 
         }
     }
+    //Track this event in Google Analytics
+    ga('send', 'event', 'click', 'burrito-masala', 'Finished building');
 });
