@@ -236,6 +236,8 @@ $('#finish').on('click', function() {
 
         }
     }
+    //Allow user to tweet order using Twitter's Web Intents API
+    $("#tweet").attr("href", "https://twitter.com/intent/tweet?text=I am getting a " + proteinName + " and " + riceName + " " + mealType + " from Burrito Masala!" +  "&url=joshboyan.com&original_referer=");
     //Track this event in Google Analytics
     ga('send', 'event', 'click', 'burrito-masala', 'Finished building');
 });
