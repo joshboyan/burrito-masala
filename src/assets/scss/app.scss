@@ -186,7 +186,6 @@ nav {
     transition: all .75s ease-in-out 0s;
     img {
         position: fixed;
-        margin-top: -20px;
         width: 33%;
         max-width: 200px;
         left: 0;
@@ -447,6 +446,7 @@ main {}
 }
 
 .rice {
+    opacity: 0;
     transform: scale(.25, .25);
 }
 
@@ -458,6 +458,7 @@ main {}
 }
 
 .toppings {
+    opacity: 0;
     transform: scale(.25, .25);
 }
 
@@ -474,6 +475,7 @@ main {}
 }
 
 .order-message {
+    opacity: 0;
     transform: scale(.25, .25);
     a {
         color: $dark;
@@ -529,6 +531,7 @@ main {}
 }
 
 .scaleUp {
+    opacity: 1;
     transform: scale(1, 1);
 }
 //Styling the reviews
@@ -691,3 +694,4 @@ footer {
         }
     }
 }
+

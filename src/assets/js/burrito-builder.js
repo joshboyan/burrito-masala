@@ -14,26 +14,6 @@ var currentTime = new Date();
 var hours = currentTime.getHours();
 var mins = currentTime.getMinutes();
 
-//Animate .builder-menu
-
-//Alternate the heading colors when user slects burrtio or bowl
-$('#builderBurrito').click(function() {
-    $('#builderBurrito a').css({
-        color: '$color2'
-    });
-    $('#builderBowl a').css({
-        color: '$color5'
-    });
-});
-$('#builderBowl').click(function() {
-    $('#builderBowl a').css({
-        color: '$color2'
-    });
-    $('#builderBurrito a').css({
-        color: '$color5'
-    });
-});
-
 // When user selects protein button
 $('#protein tr td button').click(function() {
 
@@ -52,10 +32,6 @@ $('#protein tr td button').click(function() {
     $('nav img').css({
         transform: 'scale(.5,.5)',
         margin: '-30px 0 0 -20px',
-        transition: 'all .2s ease-in-out 0s'
-    });
-    $('#persistantArrow').css({
-        display: 'none',
         transition: 'all .2s ease-in-out 0s'
     });
 
