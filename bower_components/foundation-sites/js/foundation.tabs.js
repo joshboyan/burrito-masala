@@ -76,6 +76,7 @@ class Tabs {
           });
         });
       }
+
     });
     if(this.options.matchHeight) {
       var $images = this.$tabContent.find('img');
@@ -92,7 +93,7 @@ class Tabs {
       var anchor = window.location.hash;
       //need a hash and a relevant anchor in this tabset
       if(anchor.length) {
-        var $link = this.$element.find('[href$="'+anchor+'"]');
+        var $link = this.$element.find('[href="'+anchor+'"]');
         if ($link.length) {
           this.selectTab($(anchor), true);
 
@@ -318,7 +319,7 @@ class Tabs {
       idStr = `#${idStr}`;
     }
 
-    var $target = this.$tabTitles.find(`[href$="${idStr}"]`).parent(`.${this.options.linkClass}`);
+    var $target = this.$tabTitles.find(`[href="${idStr}"]`).parent(`.${this.options.linkClass}`);
 
     this._handleTabChange($target, historyHandled);
   };
@@ -341,7 +342,7 @@ class Tabs {
 
         var panel = $(this),
             isActive = panel.hasClass(`${_this.options.panelActiveClass}`); // get the options from the parent instead of trying to get them from the child
-
+            
         if (!isActive) {
           panel.css({'visibility': 'hidden', 'display': 'block'});
         }

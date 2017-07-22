@@ -72,7 +72,8 @@ $reveal-overlay-background: rgba($black, 0.45) !default;
   }
 
   // Make sure rows don't have a min-width on them
-  .column {
+  .column,
+  .columns {
     min-width: 0;
   }
 
@@ -123,7 +124,6 @@ $reveal-overlay-background: rgba($black, 0.45) !default;
   html.is-reveal-open body {
     min-height: 100%;
     overflow: hidden;
-    position: fixed;
     user-select: none;
   }
 

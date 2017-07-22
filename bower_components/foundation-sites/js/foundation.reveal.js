@@ -379,15 +379,14 @@ class Reveal {
     }
     // jQuery method of hiding
     else {
-
-      this.$element.hide(this.options.hideDelay);
-
       if (this.options.overlay) {
         this.$overlay.hide(0, finishUp);
       }
       else {
         finishUp();
       }
+
+      this.$element.hide(this.options.hideDelay);
     }
 
     // Conditionals to remove extra event listeners added on open
@@ -403,18 +402,14 @@ class Reveal {
 
     function finishUp() {
       if (_this.isMobile) {
-        if ($('.reveal:visible').length === 0) {
-          $('html, body').removeClass('is-reveal-open');
-        }
+        $('html, body').removeClass('is-reveal-open');
         if(_this.originalScrollPos) {
           $('body').scrollTop(_this.originalScrollPos);
           _this.originalScrollPos = null;
         }
       }
       else {
-        if ($('.reveal:visible').length  === 0) {
-          $('body').removeClass('is-reveal-open');
-        }
+        $('body').removeClass('is-reveal-open');
       }
 
 

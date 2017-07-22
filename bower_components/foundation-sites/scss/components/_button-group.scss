@@ -11,7 +11,7 @@
 $buttongroup-margin: 1rem !default;
 
 /// Margin between buttons in a button group.
-/// @type Number
+/// @type Border
 $buttongroup-spacing: 1px !default;
 
 /// Selector for the buttons inside a button group.
@@ -28,10 +28,8 @@ $buttongroup-radius-on-each: true !default;
 
 /// Add styles for a button group container.
 /// @param {String} $child-selector [$buttongroup-child-selector] - Selector for the buttons inside a button group.
-/// @param {Number} $spacing [$buttongroup-spacing] - Spacing between buttons in a button group.
 @mixin button-group(
-  $child-selector: $buttongroup-child-selector,
-  $spacing: $buttongroup-spacing
+  $child-selector: $buttongroup-child-selector
 ) {
   @include clearfix;
   margin-bottom: $buttongroup-margin;
@@ -47,8 +45,8 @@ $buttongroup-radius-on-each: true !default;
 
   #{$child-selector} {
     margin: 0;
-    margin-#{$global-right}: $spacing;
-    margin-bottom: $spacing;
+    margin-#{$global-right}: $buttongroup-spacing;
+    margin-bottom: $buttongroup-spacing;
     font-size: map-get($button-sizes, default);
 
     @if $global-flexbox {
@@ -78,14 +76,12 @@ $buttongroup-radius-on-each: true !default;
 
 /// Creates a full-width button group, making each button equal width.
 /// @param {String} $selector [$buttongroup-child-selector] - Selector for the buttons inside a button group.
-/// @param {Number} $spacing [$buttongroup-spacing] - Spacing between buttons in a button group.
 @mixin button-group-expand(
   $selector: $buttongroup-child-selector,
-  $spacing: $buttongroup-spacing,
   $count: null
 ) {
   @if not $global-flexbox {
-    margin-#{$global-right}: -$spacing;
+    margin-#{$global-right}: -$buttongroup-spacing;
 
     &::before,
     &::after {
@@ -108,11 +104,11 @@ $buttongroup-radius-on-each: true !default;
         &:first-child:nth-last-child(#{$i}) {
           &, &:first-child:nth-last-child(#{$i}) ~ #{$selector} {
             display: inline-block;
-            width: calc(#{percentage(1 / $i)} - #{$spacing});
-            margin-#{$global-right}: $spacing;
+            width: calc(#{percentage(1 / $i)} - #{$buttongroup-spacing});
+            margin-#{$global-right}: $buttongroup-spacing;
 
             &:last-child {
-              margin-#{$global-right}: $spacing * -$buttongroup-expand-max;
+              margin-#{$global-right}: $buttongroup-spacing * -$buttongroup-expand-max;
             }
           }
         }

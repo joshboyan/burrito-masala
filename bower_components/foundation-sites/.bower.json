@@ -35,8 +35,8 @@
   "_release": "6.3.1",
   "_resolution": {
     "type": "version",
-    "tag": "6.3.1",
-    "commit": "fc578179ab1718c18216f88b2ff5b04c70532d53"
+    "tag": "v6.3.1",
+    "commit": "9bdf0817e70fec15b1df643d6651ecdd5fe0ad02"
   },
   "_source": "https://github.com/zurb/foundation-sites.git",
   "_target": "~6.3.0",
